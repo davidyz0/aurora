@@ -21,7 +21,7 @@ jobs:
         run: |
           cargo doc --no-deps --features xx-doc \
             --package log --package enumflags2 --package num-traits \
-            --package xx-macro-support --package xx-macros --package xx-core \
+            --package xx-macros --package xx-proc-macros --package xx-core \
             --package xx-pulse
           echo '<meta http-equiv="refresh" content="0; url=xx_pulse">' > target/doc/index.html
           rm target/doc/.lock
