@@ -1,4 +1,6 @@
 ## Why stackful?
+Efficiency is a high priority of xx-* libraries.
+
 - [Zero cost async traits](#zero-cost-async-traits) <br>
 - [Use sync code as if it were async](#use-sync-code-as-if-it-were-async) <br>
 - [Async closures on stable](#async-closures-no-more-poll-functions-or-impl-future-for-myfuture) <br>
@@ -33,7 +35,7 @@ async fn monomorphize(value: &mut impl MyTrait) {
 
 Every async task has a execution context responsible for scheduling running operations asynchronously. <br>
 Normally, it's implicit and hidden from view of normal code, <br>
-but we can get a reference to it using [`xx_pulse::get_context`](https://github.com/davidyz0/xx-core/blob/main/src/coroutines/mod.rs#L72), <br>
+but we can get a reference to it using [`xx_pulse::get_context`](https://github.com/davidyz0/xx-core/blob/main/src/coroutines/mod.rs#L78), <br>
 which has the following function signature
 
 ```rust

@@ -1,4 +1,4 @@
-All tests are ran single-threaded, for tokio it would be the `current_thread` runtime
+All tests are ran single-threaded, for tokio it would be the `current_thread` runtime. (Note: multithreading is still WIP)
 
 ![](./Echo%20server%20QPS%20(2,000%20clients).svg)
 

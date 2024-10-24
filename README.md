@@ -6,22 +6,18 @@
 
 [Documentation](https://davidyz0.github.io/xx-pulse)
 
-Safe, [performant](./benchmarks/README.md), and efficient async rust runtime. <br>
-Same syntax as async rust and zero-cost ergonomics. <br>
-Based on stackful coroutines. <br>
+I/O at the speed of light. See [benchmarks](./benchmarks/README.md).
 
-- [Benchmarks](./benchmarks/README.md) <br>
-- [Motivation and use cases](./Motivation.md) <br>
 - [Getting started](#getting-started)
 - [Thread local safety](#thread-local-safety)
-- [Features and development stage](#features-and-development-stage)
+- [Motivation and use cases](./Motivation.md)
 
 ### Note:
 
 This library is not ready for production use. Many semantics and APIs are still under development.
 
-This library is currently only available for Linux (other OS's contributions are welcome).<br>
-For Windows and Mac users, running in Docker or WSL also work. See [features and development stage](#features-and-development-stage)
+This library is currently only available for Linux (kernel 5.6+, other OS's contributions are welcome).<br>
+For Windows and Mac users, running in Docker or WSL also work.
 
 The [rust](https://hub.docker.com/_/rust) docker container is sufficient.
 
@@ -101,24 +97,3 @@ async fn try_use_thread_local() {
 	});
 }
 ```
-
-### Features and development stage
-
-Available I/O Backends:
-- io_uring (requires linux kernel version >= 5.6, recommended 5.11 or 6.1 for best performance)
-- kqueue, iocp, epoll: contributions welcome
-
-Currently supported architectures:
-- amd64 (x86_64)
-- arm64 (aarch64)
-
-Current and planned features:
-- [x] custom async desugaring
-- [x] low latency and zero overhead read/write APIs with the same ergonomics as `std::io`, now with 100% less allocations, `thread_local` lookups, memory copy, and passing owned buffers
-- [x] dynamic dispatch
-- [x] low overhead spawn, select, join
-- [x] safe async closures, async fn mut
-- [x] use sync code in an async manner, without rewriting existing sync code
-- [ ] multithreading (in progress)
-- [ ] async drop (compiler support is ideal)
-- [ ] io_uring goodies (fixed file, buffer select)
