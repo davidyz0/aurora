@@ -4,7 +4,7 @@
 
 `msrv: 1.80.0 stable`
 
-[Documentation](https://davidyz0.github.io/xx-pulse)
+[Documentation](https://davidyz0.github.io/aurora)
 
 I/O at the speed of light. See [benchmarks](./benchmarks/README.md).
 
